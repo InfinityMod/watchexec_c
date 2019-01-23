@@ -1,10 +1,12 @@
-Third party crate to add C(C++)-binding support to watchexec. 
+Third party crate to add C(C++)-binding support to _watchexec_. 
 
-Watchexec v. 1.9.3 is required as some parts needed to be aligned for the implementation.
-The crate exports the watchexec program including the c-bindings into a dynamic library (linux: libwatchexec_c.so).
-A sample C++ application is integrated at the "test" folder. For a short testing (under linux) just run:
+_Watchexec_ _v.1.9.3_ is required as some parts needed to be aligned for the implementation.
 
-make test  
-make test_run
+The crate exports the watchexec program including the c-bindings into a dynamic library (linux: _libwatchexec_c.so_).
 
-and change some files at ./test/to_watch. The file changes should be displayed. Compilation requires g++.
+A sample C++ application is appended to the _"./test"_ folder. For a short testing (under linux) just run:
+
+**make test**  
+**make test_run**
+
+Change some files at _"./test/to_watch"_. The file changes should be displayed in the executed console. Compilation requires _g++_.
