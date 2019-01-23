@@ -1,0 +1,28 @@
+[package]
+name = "watchexec_c"
+version = "0.9.0"
+authors = ["David Ziegler <webtech.davidziegler@gmail.com>"]
+description = "C-Bindings for watchexec"
+documentation = "https://github.com/watchexec/watchexec"
+homepage = "https://github.com/watchexec/watchexec"
+repository = "https://github.com/watchexec/watchexec"
+readme = "README.md"
+keywords = ["watcher", "inotify", "fsevents", "kqueue", "c bindings"]
+categories = ["dynamic-libraries", "c", "c++"]
+license = "Apache-2.0"
+
+[badges]
+appveyor = { repository = "InfinityMod/watchexec_c" }
+travis-ci = { repository = "InfinityMod/watchexec_c" }
+
+[dependencies]
+#watchexec = { path = "../watchexec" }
+watchexec = "1.9.3"
+chrono = "0.4"
+libc = "0.2.47"
+
+
+[lib]
+name = "watchexec_c"
+crate-type = ["rlib", "dylib"]
+path = "src/lib.rs"
