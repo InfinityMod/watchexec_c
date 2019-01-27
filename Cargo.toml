@@ -16,8 +16,8 @@ appveyor = { repository = "InfinityMod/watchexec_c" }
 travis-ci = { repository = "InfinityMod/watchexec_c" }
 
 [dependencies]
-#watchexec = { path = "../watchexec" }
-watchexec = "1.9.3"
+watchexec = { path = "../watchexec" }
+#watchexec = "1.9.3"
 chrono = "0.4"
 libc = "0.2.47"
 

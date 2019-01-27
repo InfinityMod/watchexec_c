@@ -10,6 +10,7 @@ pub struct PathOp_C {
     pub op: *const libc::c_char,
     pub cookie: libc::uint32_t,
     pub time: libc::int64_t,
+    pub time_micro: libc::uint32_t
 }
 
 #[repr(C)]
@@ -69,6 +70,7 @@ fn pathop_to_pathop_c(paths: Vec<PathOp>) -> Vec<PathOp_C>{
 
         let datetime = DateTime::<Utc>::from(_time);
         let unix_datetime = datetime.timestamp();
+        let unix_micro_datetime = datetime.timestamp_subsec_micros();
         // Formats the combined date and time with the specified format string.
         //let timestamp_str = datetime.format("%Y-%m-%d %H:%M:%S.%f").to_string();
 
@@ -84,6 +86,7 @@ fn pathop_to_pathop_c(paths: Vec<PathOp>) -> Vec<PathOp_C>{
             op: string_from_rust(key.to_owned()),
             cookie: cookie,
             time: unix_datetime,
+            time_micro: unix_micro_datetime
         });
     }
     c_paths

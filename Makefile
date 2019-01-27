@@ -6,6 +6,7 @@ CC = g++
 HEADERDIR = ./src/c_header
 BINDIR = ./test
 DBGDIR = ./target/debug
+RELEASEDIR = ./target/release
 
 OBJECT = watch_test.cpp
 BINNAME = watch_test
@@ -19,9 +20,11 @@ CD = cd
 
 debug:	src/* Cargo.toml
 	@cargo build
+	${CP_R} ${HEADERDIR}/watchexec_c.* $(DBGDIR)
 
 release: src/* Cargo.toml
 	@cargo build --release
+	${CP_R} ${HEADERDIR}/watchexec_c.* $(RELEASEDIR)
 
 clean:
 	@cargo clean
